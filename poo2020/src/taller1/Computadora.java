@@ -48,7 +48,7 @@ public class Computadora {
         return tamanio;
     }
 
-    public String Calcular(){
+    public String calcular(){
         String calcular = "Este metodo calculara los valores pediodos por el usuario";
         return calcular;
     }
@@ -92,7 +92,7 @@ public class Computadora {
 
     /**
      * Metodo para actualizar la variable tamanio
-     * @param marca
+     * @param tamanio
      */
     public void actualizarTamanio(double tamanio) {
         this.tamanio = tamanio;

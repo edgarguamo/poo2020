@@ -36,7 +36,7 @@ public class Docente {
      * @return estadoCivil
      */
     public String obtenerEstadoCivil(){
-        return estadoCivil
+        return estadoCivil;
     }
 
     /**

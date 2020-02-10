@@ -5,13 +5,11 @@ public class EjecutaAnimal {
         Animal objAnimal = new Animal();
         objAnimal.actualizarFamilia ("Canino");
         objAnimal.actualizarRaza("French Poodle");
-        objAnimal.actualizarEspecie("Perro");
+        objAnimal.actualizarespecie("Perro");
         objAnimal.actualizarTamanio("1.20");
         objAnimal.actualizarvDesplazamiento("25km/h");
 
-
-        String impresion = objAnimal.obtenerDatos;
-        String infoAlm = objAnimal.infoAlm;
+        String impresion = objAnimal.obtenerDtos();
         System.out.printf(impresion);
     }
 

@@ -44,6 +44,7 @@ public class Celular {
      * @return almacenamiento
      */
     public String estAlm() {
+        String almacenamiento = "Esta variable enviara la cantidad de almacenamiento sobrante";
         return almacenamiento;
     }
 
