@@ -23,6 +23,7 @@ public class Cerveza {
         System.out.println("Tipo: "+getTipo());
         System.out.println("Precio: "+getPrecio());
         System.out.println("Unidades Vendidas: "+ getUnidadesVendidas());
+        System.out.println("Total Ventas: $"+totalVentas(getPrecio(),getUnidadesVendidas()));
     }
 
 
