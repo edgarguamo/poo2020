@@ -16,6 +16,6 @@ public class EjecutaCalificacionesUtpl {
 
          CalifcacionesUtpl cali = new CalifcacionesUtpl(nombre,asig,cali1,cali2,"");
 
-        cali.impresion();
+        cali.caliMensaje();
     }
 }
