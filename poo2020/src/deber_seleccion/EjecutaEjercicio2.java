@@ -1,11 +1,13 @@
-package disenio_seleccion;
+package deber_seleccion;
 
-import deber_seleccion.Ejercicio2;
+import disenio_seleccion.Empleado;
 
 import java.util.Scanner;
 
-public class EjecutaEmpleado {
+public class EjecutaEjercicio2 {
+    //Método Principal
     public static void main(String[] args) {
+        //Declaración del Scannaer
         Scanner teclado = new Scanner(System.in);
         //Petición de variables
         System.out.println("Ingrese su nombre");
@@ -16,7 +18,12 @@ public class EjecutaEmpleado {
         double cuota = teclado.nextDouble();
 
         //Creación objeto
-        Empleado sueldo = new Empleado(nombre,horas,cuota);
+        Ejercicio2 sueldo = new Ejercicio2();
+
+        sueldo.setNombre(nombre);
+        sueldo.setHoras(horas);
+        sueldo.setCuota(cuota);
+
 
         //Llamada del método impresion del objeto sueldo
         sueldo.impresion();
