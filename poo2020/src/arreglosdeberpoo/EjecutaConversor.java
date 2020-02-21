@@ -27,7 +27,7 @@ public class EjecutaConversor {
         con.setLongitud(longitud);
         con.setCadena(codigo);
         con.setBinario(binario);
-        con.generalDecimal();
+        con.generarDecimal();
         con.mensaje();
     }
 }

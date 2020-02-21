@@ -1,6 +1,6 @@
 package arreglosdeberpoo;
 
-public class Estudiantes {
+public class Estudiante {
     //Declaración de variables
     private String[] nombre= new String[5];
     private int[] edad = new int[5];

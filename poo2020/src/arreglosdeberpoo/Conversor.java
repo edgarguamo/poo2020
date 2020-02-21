@@ -78,7 +78,7 @@ public class Conversor {
     /**
      * Método para transformar un array de enteros a un entero
      */
-    public void generalDecimal(){
+    public void generarDecimal(){
         int c =0;
         int exp = longitud;
         while (c <= longitud){

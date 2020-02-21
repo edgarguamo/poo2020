@@ -2,7 +2,7 @@ package arreglosdeberpoo;
 
 import java.util.Scanner;
 
-public class EjecutaEstudiantes {
+public class EjecutaEstudiante {
     public static void main(String[] args) {
         //Declaración de la clase scanner
         Scanner teclado = new Scanner(System.in);
@@ -26,7 +26,7 @@ public class EjecutaEstudiantes {
             c++;
         }
         // Creación del objeto est
-        Estudiantes est = new Estudiantes();
+        Estudiante est = new Estudiante();
 
         //Llamada de los métodos
         est.setNombre(nombre);
