@@ -4,13 +4,15 @@ import java.util.Scanner;
 
 public class EjecutaEstudiantes {
     public static void main(String[] args) {
+        //Declaración de la clase scanner
         Scanner teclado = new Scanner(System.in);
+        //Declaración de variables
         int c = 1;
         String[] nombre= new String[5];
         int[] edad = new int[5];
         String[] uni = new String[5];
         String[] celular = new String[5];
-
+        //Bucle para ingresar la información
         while (c<nombre.length){
             System.out.println("Ingrese su nombre:");
             nombre[c] = teclado.nextLine();
@@ -23,13 +25,14 @@ public class EjecutaEstudiantes {
             celular[c] = teclado.nextLine();
             c++;
         }
-
+        // Creación del objeto est
         Estudiantes est = new Estudiantes();
+
+        //Llamada de los métodos
         est.setNombre(nombre);
         est.setEdad(edad);
         est.setUni(uni);
         est.setCelular(celular);
-
         est.generarMensaje();
 
 
