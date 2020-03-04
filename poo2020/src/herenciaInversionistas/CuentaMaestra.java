@@ -8,7 +8,6 @@ public class CuentaMaestra extends Inversionista {
     private double[] interesCM3 = {2.95,3.10,3.75,4.75,5.25};
     private double[] interesCM4 = {3.05,3.25,3.90,5,5.50,5,63};
     private double[] interesCM5 = {3.25,3.5,4,5.25,5.75};
-    private int posicion;
     private int tamanioMonto;
 
     /**
