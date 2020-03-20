@@ -12,12 +12,13 @@ import java.util.List;
 import proyectopoo.IngresoMercaderia;
 /**
  *
- * @author Usuario iTC
+ * @author Edgar Guamo
  */
 public class CalcularCompra extends javax.swing.JFrame {
 
+    //Declaración de variables globales 
     int c2 = 0;
-    int c3=1;
+    //Obtención del tamaño de la lista 
     int tamanioLista = IngresoMercaderia.proComestibles.size()+
                 IngresoMercaderia.proUtensilio.size()+
                 IngresoMercaderia.proOficina.size()+
@@ -302,20 +303,26 @@ public class CalcularCompra extends javax.swing.JFrame {
 
     private void comprasFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comprasFinalizarActionPerformed
         // TODO add your handling code here:
+        //Llamada a los métodos 
         rellenarTabla();
         mostrarLista();  
         
     }//GEN-LAST:event_comprasFinalizarActionPerformed
 
     public void rellenarTabla(){
+        //Captura de la información de los textfield en variables 
         String search = txtNombre.getText();
         String searchCantidad = txtCantidad.getText();
+        //Condicional para que por defecto se muestre el valor unitario del 
+        //árticulo
         boolean condicion = true;
         if (searchCantidad.isEmpty()){
             searchCantidad = "1";
             condicion = false;
         }
+        //Para rellenar la lista 
         for(Comestible comestible:IngresoMercaderia.proComestibles){
+            //Condicional para encontrar los datos sin usar el nombre completo
             if(comestible.getNombre().contains(search)){
                 matriz[c2][0] = comestible.getNombre();
                 matriz[c2][1] = searchCantidad;
@@ -328,6 +335,7 @@ public class CalcularCompra extends javax.swing.JFrame {
             }             
         }
         for(Utensilio utensilio : IngresoMercaderia.proUtensilio){
+            //Condicional para encontrar los datos sin usar el nombre completo
             if (utensilio.getNombre().contains(search)){
                 matriz[c2][0] = utensilio.getNombre();
                 matriz[c2][1] = searchCantidad;
@@ -340,6 +348,7 @@ public class CalcularCompra extends javax.swing.JFrame {
             }
         }
         for(Oficina oficina: IngresoMercaderia.proOficina){
+            //Condicional para encontrar los datos sin usar el nombre completo
             if (oficina.getNombre().contains(search)){
                 matriz[c2][0] = oficina.getNombre();
                 matriz[c2][1] = searchCantidad;
@@ -352,6 +361,7 @@ public class CalcularCompra extends javax.swing.JFrame {
             }
         }
         for(Industrial industrial: IngresoMercaderia.proIndustrial){
+            //Condicional para encontrar los datos sin usar el nombre completo
             if (industrial.getNombre().contains(search)){
                 matriz[c2][0] = industrial.getNombre();
                 matriz[c2][1] = searchCantidad;
@@ -364,19 +374,26 @@ public class CalcularCompra extends javax.swing.JFrame {
             }
         } 
         if (condicion){
+            // Cuando el usuario ingrese la cantidad calcular los costos 
             subTotal = subTotal + Double.parseDouble(matriz[c2][4]);
             totalIva = 0.12*subTotal;
             total = subTotal+totalIva;
+            //Limpieza del jLabel para eliminar el aviso por exceso de cantidad
             lblError.setText("");
+            //Enviar la información a los jLabel para poder ser vistos 
             subtotal.setText(String.valueOf(subTotal));
             iva.setText(String.valueOf(totalIva));
             pTotal.setText(String.valueOf(total));   
         }
+        //Incremento del contador
         c2++;
+        //Llamada al método
         mostrarLista();
+        //Limpieza del text field 
         txtCantidad.setText("");
     }
     
+    //Método para mostrar la información en el jtable 
     public void mostrarLista(){
         tablaProductos.setModel(new javax.swing.table.DefaultTableModel(
             matriz,
@@ -392,12 +409,15 @@ public class CalcularCompra extends javax.swing.JFrame {
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
+        
        c2= c2-1;
+       //Eliminación del último registro 
        matriz[c2][0]="";
        matriz[c2][1]="";
        matriz[c2][2]="";
        matriz[c2][3]="";
        matriz[c2][4]="";
+       
        mostrarLista();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
@@ -405,8 +425,9 @@ public class CalcularCompra extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         double cantidadElegida = Double.parseDouble(txtCantidad.getText());
-               
+        //Condicional para identificar si la cantidad excede a la registrada        
         if (cantidadElegida > cantidadMaxima){
+            //Mensaje para avisar del exceso de cantidad 
             lblError.setText("cantidad máxima " + cantidadMaxima);
             
         }else if (cantidadElegida <= cantidadMaxima){ 

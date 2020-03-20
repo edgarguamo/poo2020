@@ -7,11 +7,22 @@ package proyectopoo;
 
 /**
  *
- * @author Usuario iTC
+ * @author Edgar Guamo
  */
 public class Utensilio extends Producto{
+    
+    //Declaración de Variables
     private String tipo;
     
+    /**
+     * Constructor
+     * @param tipo
+     * @param nombre
+     * @param cantidad
+     * @param cantidadTipo
+     * @param precio
+     * @param marca 
+     */
      public Utensilio(String tipo, String nombre, 
              double cantidad, String cantidadTipo, 
             double precio, String marca) {
@@ -24,12 +35,20 @@ public class Utensilio extends Producto{
 
     }
 
+     /**
+      * Método para obtener el valor de tipo
+      * @return tipo
+      */
     public String getTipo() {
         return tipo;
     }
     
     @Override
     
+    /**
+     * Método para calcular valorProducto
+     * @param cantidadReal
+     */
     public void calcularProducto(int cantidadReal){
         valorProducto = precio * cantidadReal;
     }

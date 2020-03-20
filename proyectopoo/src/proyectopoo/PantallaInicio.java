@@ -7,7 +7,7 @@ package proyectopoo;
 
 /**
  *
- * @author Usuario iTC
+ * @author Edgar Guamo
  */
 public class PantallaInicio extends javax.swing.JFrame {
 
@@ -196,22 +196,28 @@ public class PantallaInicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Boton Ingreso Mercadería
     private void ingresarMercActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarMercActionPerformed
         // TODO add your handling code here:
         IngresoMercaderia iMerc = new IngresoMercaderia();
+        //Para mostrar la interfaz 
         iMerc.show();
         
     }//GEN-LAST:event_ingresarMercActionPerformed
-
+    
+    //Boton calcular Compras
     private void calcularComActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcularComActionPerformed
         // TODO add your handling code here:
         CalcularCompra cComp = new CalcularCompra();
+        //Para mostrar la interfaz 
         cComp.show();
 
     }//GEN-LAST:event_calcularComActionPerformed
 
+    //Boton salir 
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
         // TODO add your handling code here:
+        //Para cerrrar el programa
         dispose();
     }//GEN-LAST:event_salirActionPerformed
 

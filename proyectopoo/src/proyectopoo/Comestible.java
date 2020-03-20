@@ -7,12 +7,24 @@ package proyectopoo;
 
 /**
  *
- * @author Usuario iTC
+ * @author Edgar Guamo
  */
 public class Comestible extends Producto{
+    
+    //Declaración de variables
     private String tipo;
     private String tiempoVid;
     
+    /**
+     * Constructor 
+     * @param tipo
+     * @param tiempoVid
+     * @param nombre
+     * @param cantidad
+     * @param cantidadTipo
+     * @param precio
+     * @param marca 
+     */
     public Comestible(String tipo, String tiempoVid, String nombre, 
             double cantidad, String cantidadTipo, 
             double precio, String marca) {
@@ -26,16 +38,27 @@ public class Comestible extends Producto{
 
     }
 
+    /**
+     * Método para regresar el valor de la variable tipo
+     * @return tipo
+     */
     public String getTipo() {
         return tipo;
     }
 
+    /**
+     * Método para regresar el valor de la varible tiempoVid
+     * @return  tiempo vid
+     */
     public String getTiempoVid() {
         return tiempoVid;
     }
     
     @Override
-    
+    /**
+     * Método para calcular el valor del producto 
+     * @param cantidadReal
+     */
     public void calcularProducto(int cantidadReal){
         valorProducto =  precio * cantidadReal;
     }

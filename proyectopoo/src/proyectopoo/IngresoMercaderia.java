@@ -2,6 +2,10 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
+ * 
+ *
+ *
+ * Realizado por: Edgar Guamo M
  */
 package proyectopoo;
 
@@ -10,11 +14,11 @@ import java.util.List;
 
 /**
  *
- * @author Usuario iTC
+ * @author Edgar Guamo
  */
 public class IngresoMercaderia extends javax.swing.JFrame {
 
-    
+    //Declaración de arrayLists
     static List<Comestible> proComestibles = new ArrayList<Comestible>();
     static List<Utensilio> proUtensilio = new ArrayList<Utensilio>();
     static List<Oficina> proOficina = new ArrayList<Oficina>();
@@ -28,6 +32,8 @@ public class IngresoMercaderia extends javax.swing.JFrame {
      */
     public IngresoMercaderia() {
         initComponents();
+        //sentencias para deshabilitar la vista de algunos objetos 
+        //en la interfaz 
         txtOpcion.setVisible  (false);
         mensajeOpcion.setVisible(false);
         mensajeOpcion2.setVisible(false);
@@ -305,6 +311,7 @@ public class IngresoMercaderia extends javax.swing.JFrame {
 
     private void btnRegistrarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarMActionPerformed
         // TODO add your handling code here:
+        //Captura de información de los textField 
         String nombre = txtNombrePro.getText();
         double cantidad = Double.parseDouble(txtCantidadPro.getText());
         String marca = txtMarca.getText();
@@ -313,12 +320,14 @@ public class IngresoMercaderia extends javax.swing.JFrame {
         String opcion2 = txtOpcion2.getText();
 
         switch(posicion){
+            //Envio de información a los objetos 
             case 1://Comestible
-
+            
             //Creación del objeto
             Comestible comestible = new Comestible(opcion1, opcion2,
                 nombre, cantidad, cantidadTipo, precio, marca);
-
+            
+            //envio de información al arrayList
             proComestibles.add(comestible);
             break;
 
@@ -327,6 +336,7 @@ public class IngresoMercaderia extends javax.swing.JFrame {
             Utensilio utensilio = new Utensilio(opcion1, nombre, cantidad
                 , cantidadTipo, precio, marca);
 
+            //envio de información al arrayList
             proUtensilio.add(utensilio);
             break;
 
@@ -335,6 +345,7 @@ public class IngresoMercaderia extends javax.swing.JFrame {
             Oficina oficina = new Oficina(opcion1, nombre, cantidad
                 , cantidadTipo, precio, marca);
 
+            //envio de información al arrayList
             proOficina.add(oficina);
             break;
 
@@ -343,10 +354,12 @@ public class IngresoMercaderia extends javax.swing.JFrame {
             Industrial industrial = new Industrial(opcion1, opcion2,
                 nombre, cantidad, cantidadTipo, precio, marca);
 
+            //envio de información al arrayList
             proIndustrial.add(industrial);
             break;
 
         }
+        //Hacer visible la lista 
         txtLista.setVisible(true);
         verLista();
         limpiar();
@@ -359,6 +372,9 @@ public class IngresoMercaderia extends javax.swing.JFrame {
         posicion = cbnTipo.getSelectedIndex();
 
         btnRegistrarM.setEnabled(true);
+        
+        //Mostrar las opciones extra para rellenar los campos únicos
+        //de cada objeto
 
         switch(posicion){
             case 1://Comestible
@@ -412,10 +428,14 @@ public class IngresoMercaderia extends javax.swing.JFrame {
 
     
     public void verLista(){
+        //obtención del tamaño de la lista
         int tamanioLista = proComestibles.size()+proUtensilio.size()+
                 proOficina.size()+proIndustrial.size();
+        //Creación de una lista para almaccenar  los datos
         String [] listaProductos = new String[tamanioLista];
         
+        
+        //Relleno de la lista 
         int c = 0;
         for (Comestible comestible: proComestibles){
             listaProductos [c] = comestible.getNombre() + "       " + 
@@ -442,9 +462,11 @@ public class IngresoMercaderia extends javax.swing.JFrame {
             c++;
         }
         
+        //Envio de la lista al jList para que la información pueda ser visible
         listaMercaderia.setListData(listaProductos);       
     }
     
+    //Método para limpiar los texfield de la intefaz 
     public void limpiar(){
         txtNombrePro.setText("");
         txtCantidadPro.setText("");
